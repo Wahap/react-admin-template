@@ -3,7 +3,6 @@ import axios from 'axios'
 import { CButton, CCol, CForm, CFormInput, CFormFeedback, CFormLabel } from '@coreui/react'
 
 const baseURL = 'https://cps-azure-func.azurewebsites.net/api/addAddress'
-const baseURL1 = 'http://localhost:7071/api'
 
 const Dashboard = () => {
   const [validated, setValidated] = useState(false)
@@ -18,9 +17,6 @@ const Dashboard = () => {
       event.stopPropagation()
     }
     setValidated(true)
-    debugger
-    let data = ''
-    // axios.get(`${baseURL1}/getAddress`).then((response) => (data = response))
 
     const address = { address1: address1, address2: address2, postcode: postcode }
     axios.post(baseURL, address)
